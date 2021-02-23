@@ -43,7 +43,7 @@ class StudentCourseListView(LoginRequiredMixin, ListView):
     template_name='students/course/list.html'
 
     def get_queryset(self):
-        qs = super().get_queryset()
+        qs = super().get_queryset() 
         return qs.filter(student__in=[self.reques.user])
 
 
